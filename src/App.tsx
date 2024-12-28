@@ -43,7 +43,7 @@ function App() {
 
             <input type="password" onChange={(event)=>{
               setPassword(event.target.value)
-            }} placeholder='Phone number, username, or email' className='rounded-sm text-sm	w-72 h-11 bg-black brightness-75 border border-white mt-5 p-3 text-white' />
+            }} placeholder='Password' className='rounded-sm text-sm	w-72 h-11 bg-black brightness-75 border border-white mt-5 p-3 text-white' />
             <h1 className='text-facebook font-medium mt-3 text-sm ml-40'>Forgot password?</h1>
           </div>
 
